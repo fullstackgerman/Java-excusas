@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Cartas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="card" class="card"></div>
+    <button onclick="generateCard()">Nueva Carta</button>
+    <br>
+    <label>Ancho: <input type="number" id="width" value="150" onchange="updateSize()"></label>
+    <label>Alto: <input type="number" id="height" value="220" onchange="updateSize()"></label>
+    <br>
+    <p>Próxima carta en: <span id="timer">10</span> segundos</p>
+    
+    <script>
+        const suits = ["heart", "spade", "club", "diamond"];
+        const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+        const symbols = { heart: "♥", spade: "♠", club: "♣", diamond: "♦" };
+        let countdown = 10;
+
+        function generateCard() {
+            const suit = suits[Math.floor(Math.random() * suits.length)];
+            const value = values[Math.floor(Math.random() * values.length)];
+            
+            const cardDiv = document.getElementById("card");
+            cardDiv.className = `card ${suit}`;
+            cardDiv.setAttribute("data-symbol", symbols[suit]);
+            cardDiv.innerHTML = `<div>${value}</div>`;
+            
+            countdown = 10;
+        }
+
+        function updateSize() {
+            const cardDiv = document.getElementById("card");
+            const width = document.getElementById("width").value + "px";
+            const height = document.getElementById("height").value + "px";
+            cardDiv.style.width = width;
+            cardDiv.style.height = height;
+        }
+
+        function updateTimer() {
+            document.getElementById("timer").innerText = countdown;
+            if (countdown === 0) {
+                generateCard();
+            }
+            countdown--;
+        }
+
+        generateCard();
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
