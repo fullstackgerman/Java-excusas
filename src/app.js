@@ -64,7 +64,33 @@ const crearMazo = () =>{
   return mazo;
 }
 
-console.log(crearMazo())
+crearMazo();
+
+const mazoBarajado = [];
+const _getRandomNumber =  (anArray) => Math.floor(Math.random() * anArray.length);
+
+// const _barajarMazo = (mazo) => {
+//   mazo.map((carta, index)=>{
+//     const cartaPosicionOriginal = mazo[index];
+//     const cartaPosicionAleatoria = mazoBarajado[_getRandomNumber(mazo)];
+//     mazoBarajado.push(cartaPosicionAleatoria);
+     
+//     //si la carta existe en la posicion no añadimos, 
+//     //si no existe en la posicion añadimos carta
+//   });
+//   return mazoBarajado; 
+// };
+
+const _barajarMazo = (mazo) => {
+  for (let i = mazo.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [mazo[i], mazo[j]] = [mazo[j], mazo[i]];
+  }
+  return mazo;
+};
+
+console.log(mazo);
+console.log(_barajarMazo(mazo));
 }
  
 
