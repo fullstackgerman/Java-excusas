@@ -1,5 +1,16 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    background: white;
+    background: black;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 200px;
+    width: 100px;
+    height: 200px;
+}
+.container-fluid{
+    min-height: 800px;
 }
