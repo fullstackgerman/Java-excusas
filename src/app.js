@@ -2,9 +2,6 @@ import "bootstrap";
 import "./style.css";
 
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 window.onload = function() {
   //write your code here
   document.querySelector("body");
@@ -19,8 +16,7 @@ window.onload = function() {
   }
   const mazo = {
     value: card,
-    length:52
-    
+    length:52 
   }
 
 

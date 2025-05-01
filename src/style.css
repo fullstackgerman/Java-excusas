@@ -3,6 +3,10 @@
 body{
     background: black;
 }
+#tapete{
+    background-image: url("./assets/img/blackjack.png");
+    background-size: contain;
+}
 .card{
     display: flex;
     justify-content: center;

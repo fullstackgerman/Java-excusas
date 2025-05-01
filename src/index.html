@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlackJack</title>
     <!-- Fontawesome is our recomended library for icons -->
@@ -15,10 +14,29 @@
   </head>
   <body>
     <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container-fluid container-sm text-center d-flex justify-content-center align-items-center">
-      <div  class="card">
+    <div id="tapete" class="container-fluid container-sm text-center d-flex flex-column justify-content-between align-items-center py-5">
+      
+      <div id="banca" class="card">
         <p id="card">aqui va una carta</p>
       </div>
+
+      <div id= "mazo" class="card">
+        <p>aqui va el mazo</p>
+      </div>
+
+      <div id="player" class="card">
+        <p>cartas de jugador</p>
+      </div>
+
+      <div>
+        <button onclick="hit()" class="btn btn-info" value="pedirCarta">
+          pedir carta
+        </button>
+        <button onclick="stand()" class="btn btn-primary" value="plantarse">
+          plantarse
+        </button> 
+      </div>   
+      
     </div>
     <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>
