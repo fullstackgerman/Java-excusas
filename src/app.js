@@ -10,7 +10,7 @@ window.onload = function() {
   document.querySelector("#card")//.algo 
 
   // Crear Mazo done
-  // Barajearlo
+  // Barajearlo done
   // Repartir dos cartas a cada 
 
   // ir calculando valores
@@ -33,54 +33,39 @@ window.onload = function() {
 
   const palos = ['♦' , '♥' , '♠',  '♣'];
   const carta = [
-    {valor: '1', cuerpo: 'as'},
-    {valor: '2', cuerpo: 'as'},
-    {valor: '3', cuerpo: 'as'},
-    {valor: '4', cuerpo: 'as'},
-    {valor: '5',cuerpo: 'as'},
-    {valor: '6',cuerpo: 'as'},
-    {valor: '7',cuerpo: 'as'},
-    {valor: '8',cuerpo: 'as'},
-    {valor: '9',cuerpo: 'as'},
-    {valor: '10',cuerpo: 'as'},
-    {valor: '10',cuerpo: 'J'},
-    {valor: '10',cuerpo: 'Q'},
-    {valor: '10',cuerpo: 'K'},
+    {valor: 1, cuerpo: '1'},
+    {valor: 2, cuerpo: '2'},
+    {valor: 3, cuerpo: '3'},
+    {valor: 4, cuerpo: '4'},
+    {valor: 5,cuerpo: '5'},
+    {valor: 6,cuerpo: '6'},
+    {valor: 7,cuerpo: '7'},
+    {valor: 8,cuerpo: '8'},
+    {valor: 9,cuerpo: '9'},
+    {valor: 10,cuerpo: '10'},
+    {valor: 10,cuerpo: 'J'},
+    {valor: 10,cuerpo: 'Q'},
+    {valor: 10,cuerpo: 'K'},
   ]
 
-const mazo = [];
-const crearMazo = () =>{
-  palos.forEach(
-    (palo) => {
-      carta.forEach(
-        ({valor, cuerpo}) => {
-          mazo.push({
-            palo, valor, cuerpo
-          })
-        }
-      )
-    }
-  )
-  return mazo;
-}
+  const crearMazo = () =>{
+    const cardList = [];
+    palos.forEach(
+      (palo) => {
+        carta.forEach(
+          ({valor, cuerpo}) => {
+            cardList.push({
+              palo, valor, cuerpo
+            })
+          }
+        )
+      }
+    )
+    return cardList;
+  }
+  let mazo = crearMazo();
 
-crearMazo();
-
-const mazoBarajado = [];
-const _getRandomNumber =  (anArray) => Math.floor(Math.random() * anArray.length);
-
-// const _barajarMazo = (mazo) => {
-//   mazo.map((carta, index)=>{
-//     const cartaPosicionOriginal = mazo[index];
-//     const cartaPosicionAleatoria = mazoBarajado[_getRandomNumber(mazo)];
-//     mazoBarajado.push(cartaPosicionAleatoria);
-     
-//     //si la carta existe en la posicion no añadimos, 
-//     //si no existe en la posicion añadimos carta
-//   });
-//   return mazoBarajado; 
-// };
-
+  console.log('Mazo inicial: ', mazo);
 const _barajarMazo = (mazo) => {
   for (let i = mazo.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -89,25 +74,32 @@ const _barajarMazo = (mazo) => {
   return mazo;
 };
 
-console.log(mazo);
-console.log(_barajarMazo(mazo));
-}
- 
+console.log('Mazo barajado: ', _barajarMazo(mazo));
 
 
-//   let playerHand = []//cartas del jugador
-//   let dealerHand = []
+const _getInitialHand = (mazo) => {
+  return [mazo.pop(), mazo.pop()];
+};
+
+let playerHand = _getInitialHand(mazo)
+let dealerHand = _getInitialHand(mazo)
+
+console.log('Mano del jugador: ', playerHand);
+console.log('Mano del dealer: ', dealerHand);
 
 
 
-//   const _getValue = (cardList) => cardList.reduce((acc, cardOcardPuntoValue) => {
-//     acc = acc + cardOcardPuntoValue;
-//     return acc;
-//   }, 0);
+  const _getValue = (hand) => hand.reduce((acc, carta) => {
+    acc = acc + carta.valor;
+    return acc;
+  }, 0);
 
-//   const playerValue = _getValue(playerHand);
+let playerValue = _getValue(playerHand);
 
-//   const dealerValue = _getValue(dealerHand);
+let dealerValue = _getValue(dealerHand);
+
+console.log("Puntos del jugador:", playerValue);
+console.log("Puntos del dealer:", dealerValue);
 
 //   const _getResult = (playerValue, dealerValue) => {
 //       if(playerValue > 21) {
@@ -146,3 +138,4 @@ console.log(_barajarMazo(mazo));
 
 
 // };
+}
