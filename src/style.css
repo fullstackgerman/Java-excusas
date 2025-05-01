@@ -6,6 +6,8 @@ body{
 #tapete{
     background-image: url("./assets/img/blackjack.png");
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .card{
     display: flex;
