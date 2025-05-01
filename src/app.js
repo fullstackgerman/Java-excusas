@@ -1,35 +1,20 @@
+//Renderizar la mano del jugador
+//Renderizar la primera carta del dealer dealerHand[0]
+//Función de renderizar carta
+//Diseño de las cartas ()
+//Modal del Resultado + Nueva Partida
+
+  // pedir => renderizar la carta nueva
+  // mostrar resultado + opción de nueva partida
+
 import "bootstrap";
 import "./style.css";
-
 
 window.onload = function() {
   //write your code here
   document.querySelector("body");
   console.dir(document.querySelector("#card"));
-  console.log("_______________");
-  document.querySelector("#card")//.algo 
-
-  // Crear Mazo done
-  // Barajearlo done
-  // Repartir dos cartas a cada 
-
-  // ir calculando valores
-
-  // turno del jugador{
-  //   pedir || plantarse
-  // }
-
-  // pedir => renderizar la carta nueva
-
-  // plantarse => turno de la banca
-
-  // turno de la banca{
-  //   pedir => renderizar la carta nueva
-  //   llegar a 17 o mas => plantarse y determinar resultado
-  // }
-
-  // mostrar resultado + opción de nueva partida
-
+  document.querySelector("#card")
 
   const palos = ['♦' , '♥' , '♠',  '♣'];
   const carta = [
@@ -64,8 +49,8 @@ window.onload = function() {
     return cardList;
   };
   let mazo = crearMazo();
-
   console.log('Mazo inicial: ', mazo);
+
   const _barajarMazo = (mazo) => {
     for (let i = mazo.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -73,7 +58,6 @@ window.onload = function() {
     }
     return mazo;
   };
-
   console.log('Mazo barajado: ', _barajarMazo(mazo));
 
   const _getInitialHand = (mazo) => {
@@ -82,7 +66,6 @@ window.onload = function() {
 
   let playerHand = _getInitialHand(mazo);
   let dealerHand = _getInitialHand(mazo);
-
   console.log('Mano del jugador: ', playerHand);
   console.log('Mano del dealer: ', dealerHand);
 
@@ -90,10 +73,8 @@ window.onload = function() {
     acc = acc + carta.valor;
     return acc;
   }, 0);
-
   let playerValue = _getValue(playerHand);
   let dealerValue = _getValue(dealerHand);
-
   console.log("Puntos del jugador:", playerValue);
   console.log("Puntos del dealer:", dealerValue);
 
@@ -121,16 +102,21 @@ window.onload = function() {
   const handlePedirCarta = () => {
     playerHand = pedirCarta(mazo, playerHand, playerValue); 
     playerValue = _getValue(playerHand);
+    _renderPlayerCard();
   
     console.log("Jugador pidió carta:", playerHand);
     console.log("Puntos del jugador:", playerValue);
-    };
+  };
 
   const handlePlantarse = () => {
+    _renderDealerHand();
     _dealerTurn();
+    _getResult();
+    _renderResult();
   }
 
   const _dealerTurn = () =>{
+     _renderDealerCard();
     if(dealerValue > 16) return;
       dealerHand = pedirCarta(mazo, dealerHand, dealerValue); 
       dealerValue = _getValue(dealerHand);
@@ -138,33 +124,16 @@ window.onload = function() {
       console.log("Puntos del dealer:", dealerValue);
       _dealerTurn();
   };
-  
- 
+
+  const _isPlayerTurn = () =>{}
   console.log(_getResult(playerValue, dealerValue));
-  // const playGame = () => {
-  //   Si el jugador se planta o se pasa => turno del dealer;
 
-  //   turno del dealer =>
-      
-  // }
-    // Si dealerValue < 17 => pedirCarta(mazo, dealerHand)
-  //   //   hand + 1
-  //   // }
-  
-  //   // if(playerPlantarse){
-  //   //   turno del dealer
-  //   // }
-  //   // if(dealerValue > 16){
-  //   //   comprobaResultados
-  //   // }
+  const playGame = () => {
+    _renderPlayerHand();
+    _renderDealerCard();
+    _nuevaPartida()
+  }
 
-  //   // const playerValue = _getValue(playerHand);
-  //   // const dealerValue = _getValue(dealerHand);
-  //   // const result = _getResult(playerValue, dealerValue);
-  //   // _renderResult(result, playerValue, dealerValue);
-  // }
-
-  
   window.handlePedirCarta = handlePedirCarta;
   window.handlePlantarse = handlePlantarse;
 };
