@@ -123,7 +123,6 @@ window.onload = function() {
 
   // const _isPlayerTurn = () =>{}
 
-
 const playGame = () => {
    let mazo = crearMazo();
    console.log('Mazo inicial: ', mazo);
@@ -138,10 +137,6 @@ const playGame = () => {
    console.log(_getResult(playerValue, dealerValue));
    console.log("Puntos del jugador:", playerValue);
    console.log("Puntos del dealer:", dealerValue);
-   
-  //  _renderPlayerHand();
-  //  _renderDealerCard();
-  //  _nuevaPartida()
   }
 
   window.handlePedirCarta = handlePedirCarta;
