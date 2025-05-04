@@ -1,5 +1,28 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    background: white;
+    background: black;
+}
+#tapete{
+    background-image: url("./assets/img/blackjack.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 200px;
+    width: 100px;
+    height: 200px;
+}
+.card-mazo{
+    min-width: 200px;
+    min-height: 100px;
+    width: 200px;
+    height: 100px;
+}
+.container-fluid{
+    min-height: 800px;
 }
