@@ -1,30 +1,27 @@
 import "bootstrap";
 import "./style.css";
+
+
+import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-
-const getRandomElement = (array) => {
-  const index = Math.floor(Math.random() * array.length);
-  return array[index];
-}
 window.onload = function() {
-  //write your code here
+//write your code here
 
-const PERSON = ["my dog", "my grandma", "my turtle", "my dad"];
-const ACTION = ["ate", "forgot", "stole", "broke"];
-const OBJECT = ["my homework", "my exam", "my backpack", "my folder"];
-const WHEN = ["yesterday", "last night", "this morning", "a while ago"];
+let generateExcuse = () => {
+let person = ["my dog", "my grandma", "my turtle", "my dad"];
+let action = ["ate", "forgot", "stole", "broke"];
+let object = ["my homework", "my exam", "my backpack", "my folder"];
+let when= ["yesterday", "last night", "this morning", "a while ago"];
 
-const generateExcuse = () => {
-  const person = getRandomElement(PERSON);
-  const action = getRandomElement(ACTION);
-  const object = getRandomElement(OBJECT);
-  const when = getRandomElement(WHEN);
+let personIndex = Math.floor(Math.random() * person.length);
+let actionIndex = Math.floor(Math.random() * action.length);
+let objectIndex = Math.floor(Math.random() * object.length);
+let whenIndex = Math.floor(Math.random() * when.length);
 
-  return `${person} ${action} ${object} ${when}`;
-}
+ return person[personIndex] + " " + action[actionIndex] + " " + object[objectIndex] + " " + when[whenIndex];
+};
 
- 
 document.querySelector('#excuse').innerHTML = generateExcuse();
 console.log("Hello Rigo from the console!");
 };
