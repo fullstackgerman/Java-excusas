@@ -1,5 +1,12 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
+* {
+	border: 1px dashed red;
+	min-height: 10px;
+}
+
+
+
 body{
     background: white;
 }
