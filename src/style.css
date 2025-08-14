@@ -1,5 +1,14 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
-    background: white;
+body {
+    box-sizing: border-box;
+}
+
+.content {
+    width: 500px;
+    background-color: aliceblue;
+}
+
+#excuse {
+    font-family: sans-serif;
 }
