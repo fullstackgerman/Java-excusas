@@ -1,10 +1,3 @@
-import "bootstrap";
-import "./style.css";
-
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 
 // Declaro los array que se usaran para generar las excusas.-
 // I declare the arrays that will be used to generate the excuses.-
@@ -27,7 +20,8 @@ function excusGenerator(who,action,what,when) {
 // El evento 'onload' se va a activar cuando la página se ha terminado de cargar completamente.-
 // The 'onload' event will be triggered when the page has finished loading completely.-
 window.onload = function() {
-  //write your code here
     let excuse = document.getElementById("excuse");
     excuse.innerHTML = excusGenerator(who, action, what, when);
-};
+}
+
+window.onload = onload;
