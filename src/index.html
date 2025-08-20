@@ -4,31 +4,52 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Generador Cartas Aleatorias</title>
 
-    <!-- Fontawesome is our recomended library for icons -->
     <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous"
     />
   </head>
   <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+
+    <div class="displayCarta">
+
+      <div id="carta" class="carta  align-items-between d-flex justify-content-center ">
+        <div class="row m-0 p-0 iconosCarta">
+
+          <div class="col-4 m-0 p-0">
+            <p id="iconoArribaIzquierda"></p>
+          </div>
+
+          <div class="col-12 text-center d-flex align-items-center justify-content-center m-0 p-0">
+            <p id="numero"></p>
+          </div>
+
+
+          <div class="row justify-content-end m-0 p-0">
+            <div class="col-4 m-0 p-0 d-flex align-items-end justify-content-end ">
+              <p id="iconoAbajoDerecha" class="m-0 p-0 "></p>        
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <br>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+
+        <button id="boton" class="w-100 mb-1">Esta carta no me gusta, cambiala</button>
+        
+        <button id="botonAncho" class="w-100 mb-1">Quiero cambiar el ancho</button>
+        
+        <button id="botonAlto" class="w-100 mb-1" >Quiero cambiar el alto</button>
+        
+        <button id="cartaDefault" class="w-100">Arreglar Carta</button>
+
       </div>
     </div>
-
     <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>
   </body>

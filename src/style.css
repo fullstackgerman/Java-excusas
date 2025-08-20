@@ -1,5 +1,36 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
 body{
+    height: 100vh;
+}
+
+.displayCarta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: white;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+
+.carta{
+    background-color: rgb(255, 248, 239);
+    display: flex;
+    width: 25vh;
+    height: 50vh;
+    border: 1px solid black;
+}
+
+.iconosCarta{
+    width: 25vh;
+}
+
+#numero, #iconoArribaIzquierda, #iconoAbajoDerecha {
+    font-size: 6vh;
 }
