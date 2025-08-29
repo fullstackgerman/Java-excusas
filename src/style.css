@@ -1,5 +1,30 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
-    background: white;
+.container_card {
+    height: 100vh;
+}
+
+.card {
+    width: 200px;
+    max-height: 340px;
+}
+
+.icon-left, .icon-right {
+    font-size: 50px;
+}
+
+.card_value {
+    height: 200px;;
+}
+
+.card_value h1 {
+    font-size: 70px;
+}
+
+.card_end {
+    transform: rotate(180deg) translateX(-80%);
+}
+
+.red {
+    color: red;
 }
