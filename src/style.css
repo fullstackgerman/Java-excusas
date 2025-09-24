@@ -1,5 +1,36 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
-
+ 
+*{
+    padding: 20px;
+}
 body{
-    background: white;
+    background: rgb(217, 217, 247);
+    justify-content: center;
+    width: 100%;
+}
+
+div.container{
+    background: linear-gradient(lightslategray, blue);
+    border: 25px;
+    border-color: rgb(49, 49, 53);
+    border-radius: 20px;
+    color: rgb(240, 240, 240);
+    text-align: center;
+    font-size: 13pt;
+    box-shadow: 10 10 10;
+    padding: 20px;
+}
+
+#frase1 {
+    font-weight: 900;
+
+}
+
+h1{
+    font-weight: 200;
+}
+
+button{
+     border-radius: 20px;
+     background: rgb(173, 173, 233);
 }
